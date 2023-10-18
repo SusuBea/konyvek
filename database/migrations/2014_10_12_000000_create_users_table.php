@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User; //automatikuasn beimportálj a modelt
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -21,6 +22,25 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        //FONTOS hogy ide írjuk , tananyag 7. pont 
+        User::create([
+            'name' => 'Bali',
+            'email' => 'bali@gmail.com',
+            'password' => 'balibara'
+        ]);
+
+        User::create([
+            'name' => 'Bea',
+            'email' => 'bea@gmail.com',
+            'password' => 'beabara'
+        ]);
+
+
+        User::create([
+            'name' => 'Mariann', 
+            'email' => 'mariann@gmail.com', 
+            'password' => 'maribara' ]);
     }
 
     /**
